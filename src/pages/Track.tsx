@@ -10,8 +10,31 @@ import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip } from 'recha
 import { Plus, ScanLine, Utensils } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-// Mock data
-const mockUser = {
+// Define meal item type
+interface MealItem {
+  name: string;
+  calories: number;
+  time: string;
+}
+
+// Define user data type
+interface UserData {
+  name: string;
+  dailyCalorieGoal: number;
+  currentCalories: number;
+  breakfast: MealItem[];
+  lunch: MealItem[];
+  dinner: MealItem[];
+  snacks: MealItem[];
+  macros: {
+    carbs: number;
+    protein: number;
+    fat: number;
+  }
+}
+
+// Mock data with proper typing
+const mockUser: UserData = {
   name: "John Doe",
   dailyCalorieGoal: 2400,
   currentCalories: 1350,
@@ -261,7 +284,8 @@ const Track = () => {
         {/* Meals for the day */}
         {['Breakfast', 'Lunch', 'Dinner', 'Snacks'].map((mealTime) => {
           const mealKey = mealTime.toLowerCase() as keyof typeof mockUser;
-          const meals = mockUser[mealKey] || [];
+          // Type assertion to ensure TypeScript knows we're dealing with an array of MealItem
+          const meals = mockUser[mealKey] as MealItem[];
           
           return (
             <Card key={mealTime}>
