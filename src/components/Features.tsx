@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { 
   Utensils, 
-  Vitamin, 
+  Pill, // Replaced Vitamin with Pill
   ClipboardList, 
   UserPlus,
   Bot,
@@ -11,6 +11,7 @@ import {
   Zap,
   Smartphone
 } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const Features = () => {
   const { ref: featuresRef, inView: featuresInView } = useInView({
@@ -26,7 +27,7 @@ const Features = () => {
       color: "bg-gradient-gold"
     },
     {
-      icon: <Vitamin size={28} />,
+      icon: <Pill size={28} />, // Using Pill icon instead of Vitamin
       title: "Personalized Vitamin Guide",
       description: "Receive tailored vitamin and supplement recommendations based on your unique profile and goals.",
       color: "bg-gradient-mint"
@@ -205,8 +206,5 @@ const Features = () => {
     </section>
   );
 };
-
-// ArrowRight is used but was missing an import
-import { ArrowRight } from 'lucide-react';
 
 export default Features;
