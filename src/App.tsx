@@ -11,6 +11,7 @@ import SignUp from "./pages/SignUp";
 import Onboarding from "./pages/Onboarding";
 import Track from "./pages/Track";
 import Analytics from "./pages/Analytics";
+import Settings from "./pages/Settings";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/onboarding" element={<Onboarding />} />
           <Route path="/track" element={<Track />} />
           <Route path="/analytics" element={<Analytics />} />
+          <Route path="/settings" element={<Settings />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
