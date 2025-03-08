@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import DashboardLayout from '@/layouts/DashboardLayout';
@@ -21,7 +20,8 @@ import {
   Target,
   Bot,
   Heart,
-  Languages
+  Languages,
+  Star
 } from 'lucide-react';
 
 const Settings = () => {
